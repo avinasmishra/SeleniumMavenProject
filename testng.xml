@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="TestNGPKG.Listeners"/>
+    </listeners>
+
+    <!-- This test is for all Annotation sequence in testNG-->
+    <test verbose="2" preserve-order="true" name="C:/Users/Avinash/IdeaProjects/SeleniumMavenProject">
+        <classes>
+            <class name="TestNGPKG.Annotation1"/>
+        </classes>
+</test>
+
+    <!-- This test is for including/excluding tags in testNG-->
+    <test verbose="2" preserve-order="true" name="Practice2">
+        <classes>
+            <class name="TestNGPKG.Annotation2">
+                <methods>
+                    <include name="test4"/>
+                    <include name="test5"/>
+                    <exclude name="test6"/>
+                    <include name="test7"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- This test is for grouping concept in testNG-->
+    <test verbose="2" preserve-order="true" name="Practice3">
+        <groups>
+         <run>
+                <include name="Smoke"/>
+         </run>
+        </groups>
+<classes>
+    <class name="TestNGPKG.Annotation2"/>
+    <class name="TestNGPKG.Annotation1"/>
+</classes>
+</test>
+
+    <!-- This test is for passing global variable in testNG for parameterization -->
+    <test verbose="2" preserve-order="true" name="Practice4">
+        <parameter name="url" value="https://google.com"/>
+        <parameter name="userName" value="siri"/>
+        <classes>
+            <class name="TestNGPKG.Annotation2"/>
+        </classes>
+    </test>
+</suite>
